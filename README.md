@@ -16,7 +16,7 @@
 1.  JetPack Libraries
 ### Demo
 Screenshot
-![Alt text]([/../<branch name>/path/to/image.png](https://github.com/hemal-magicsoftware/TODO/blob/main/screens/sample_demo.gif?raw=true "Optional Title")
+![Alt text]([/../<branch name>/path/to/image.png](https://github.com/hemal-magicsoftware/TODO/blob/main/screens/sample_demo.gif)?raw=true "Optional Title")
 
 
 
