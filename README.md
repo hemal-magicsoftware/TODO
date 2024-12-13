@@ -15,7 +15,6 @@
 ## Future Improvements
 1.  JetPack Libraries
 ### Demo
-Screenshot
 [![sample-demo.gif](https://i.postimg.cc/DzCXRkkr/sample-demo.gif)](https://postimg.cc/1gqXNdzX)
 
 
