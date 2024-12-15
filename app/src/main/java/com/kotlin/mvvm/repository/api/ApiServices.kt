@@ -29,6 +29,7 @@ interface ApiServices {
     fun updateTodo(
         @Path("id") id: String,
         @Field("title") title: String,
+        @Field("body") body: String,
         @Field("completed") completed: Boolean
     ): LiveData<Resource<TodoModel>>
 

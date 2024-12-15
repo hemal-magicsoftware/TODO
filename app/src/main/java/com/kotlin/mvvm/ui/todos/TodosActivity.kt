@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,7 +27,7 @@ import kotlinx.android.synthetic.main.empty_layout_todos.*
 import kotlinx.android.synthetic.main.progress_layout_todos.*
 
 @AndroidEntryPoint
-class TodosActivity : BaseActivity() {
+class TodosActivity : AppCompatActivity() {
 
     private lateinit var adapter: TodosAdapter
     private val todosViewModel: TodosViewModel by viewModels()

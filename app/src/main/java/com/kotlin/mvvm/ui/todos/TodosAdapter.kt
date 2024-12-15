@@ -60,6 +60,7 @@ class TodosAdapter : RecyclerView.Adapter<TodosAdapter.TodoViewHolder>(),
          */
         fun bind(todoItem: TodoModel) = with(itemView) {
             tvTitle.text = todoItem.title
+            tvBody.text = todoItem.body
             tvIsCompleted.text =
                 String.format(" %s", if (todoItem.completed) "Completed" else "Pending")
 

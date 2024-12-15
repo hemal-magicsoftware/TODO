@@ -5,6 +5,7 @@ import android.text.InputType
 import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.kotlin.mvvm.R
 import com.kotlin.mvvm.repository.model.TodoModel
 import com.kotlin.mvvm.ui.BaseActivity
@@ -20,7 +21,8 @@ import kotlinx.android.synthetic.main.activity_todos.*
  * Activity used to Add, Update, Delete Todos object
  */
 
-class AddTodoActivity : BaseActivity() {
+@AndroidEntryPoint
+class AddTodoActivity : AppCompatActivity() {
 
     companion object {
         const val INTENT_ADD_UPDATE = "Add_Update"
@@ -47,6 +49,7 @@ class AddTodoActivity : BaseActivity() {
             // Update
             todoModel = intent?.getParcelableExtra<TodoModel>(INTENT_ADD_UPDATE) as TodoModel
             note_edittext.setText(todoModel?.title)
+            note_edittext_body.setText(todoModel?.body)
             checkboxStatus.isChecked = todoModel?.completed ?: false
             title = getString(R.string.update_todo)
             save.text = getString(R.string.update)
@@ -61,6 +64,10 @@ class AddTodoActivity : BaseActivity() {
         note_edittext.inputType =
             InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_LONG_MESSAGE
         note_edittext.isSingleLine = false
+        note_edittext_body.inputType =
+            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_LONG_MESSAGE
+        note_edittext_body.isSingleLine = false
+
     }
 
     /**
@@ -94,6 +101,7 @@ class AddTodoActivity : BaseActivity() {
     private fun addTodo() {
         val hashMap: HashMap<String, Any> = HashMap()
         hashMap["title"] = note_edittext.text.toString()
+        hashMap["body"] = note_edittext_body.text.toString()
         hashMap["completed"] = checkboxStatus.isChecked
 
         addTodoViewModel.addTodo(hashMap).observe(this, {

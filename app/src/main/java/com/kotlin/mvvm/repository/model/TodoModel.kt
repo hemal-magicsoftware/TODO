@@ -17,18 +17,25 @@ data class TodoModel(
     val id: String = "",
 
     @SerializedName("title")
-    val title: String = ""
+    val title: String = "",
+
+    @SerializedName("body")
+    val body: String = ""
+
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readByte() != 0.toByte(),
         parcel.readString()!!,
-        parcel.readString()!!
+        parcel.readString()!!,
+        parcel.readString()!!,
     )
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
+
+        override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeByte(if (completed) 1 else 0)
         parcel.writeString(id)
         parcel.writeString(title)
+            parcel.writeString(body)
     }
 
     override fun describeContents(): Int {

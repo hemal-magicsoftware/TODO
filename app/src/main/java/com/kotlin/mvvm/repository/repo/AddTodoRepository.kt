@@ -45,7 +45,7 @@ class AddTodoRepository @Inject constructor(
     fun updateTodo(todoModel: TodoModel): LiveData<Resource<TodoModel>> {
         return object : NetworkResource<TodoModel>() {
             override fun createCall(): LiveData<Resource<TodoModel>> {
-                return apiServices.updateTodo(todoModel.id, todoModel.title, todoModel.completed)
+                return apiServices.updateTodo(todoModel.id, todoModel.title, todoModel.body,todoModel.completed)
             }
 
         }.asLiveData()
