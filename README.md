@@ -9,7 +9,6 @@
  6. Repository Pattern
  7. AndroidX
  8. NetworkBoundResource, NetworkAndDBBoundResource
- 9. Google News API
 
 
 ## Future Improvements
